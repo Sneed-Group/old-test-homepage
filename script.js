@@ -5,12 +5,12 @@ async function fetchBiblePassage() {
   try {
     let textData;
     if (codingMode == true) {
-      textData = 'Samuel 16:9 - And he said, "I now know de wae" in zimbabwe.';
+      textData = 'Samuel 16:9 “And he said, "I now know de wae" in zimbabwe.';
     } else {
       const response = await fetch('https://labs.bible.org/api/?passage=random&formatting=plain&type=text');
       textData = await response.text();
     }
-    document.getElementById('biblepassage').textContent = textData;
+    document.getElementById('biblepassage').textContent = `${textData}“`;
   } catch (error) {
     console.error('Error fetching Bible passage:', error);
     // Handle the error gracefully, e.g., display an error message to the user
