@@ -10,7 +10,7 @@ async function fetchBiblePassage() {
       const response = await fetch('https://labs.bible.org/api/?passage=random&formatting=plain&type=text');
       textData = await response.text();
     }
-    document.getElementById('biblepassage').textContent = `${textData}“`;
+    document.getElementById('biblepassage').textContent = `${textData}`;
   } catch (error) {
     console.error('Error fetching Bible passage:', error);
     // Handle the error gracefully, e.g., display an error message to the user
